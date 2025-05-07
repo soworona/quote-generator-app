@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    width: 100%;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    color: black;
+    background-color: inherit;
+}
+
+.navbar .logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img{
+    width: 2rem;
+    height: 1.7rem;
+}
+
+.logo a{
+    text-decoration: none;
+    font-size:1.5rem;
+    font-weight: bold;
+    color: inherit;
+}
+
+.toggle{
+    margin-left: auto;
+    cursor: pointer;
+    padding: 0.7rem;
+    border-radius: 10px;
+    background-color: inherit;
+}
+
+.toggle div:first-child{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle div:last-child{
+    display: none;
+}
+
+.toggle:hover{
+    opacity: 0.8;
+  
+}
+
+.toggle[hidden] {
+    display: none;
+}
+
+/* dark mode starts */
+.dark-theme{
+    background-color: #050519;
+    color: #ffff;
+}
+
+.dark-theme .navbar {
+ 
+    color: #ffff;
+    box-shadow: 0 4px 6px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .toggle{
+    border: 1px solid #ffff;
+    color: #ffff;
+}  
+
+.dark-theme .toggle div:first-child{
+    display: none;
+}
+
+.dark-theme .toggle div:last-child{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* dark mode ends */
+
+@media screen and (min-width: 768px) {
+    .navbar{
+        padding: 1.5rem;
+        padding-right: 2.5rem;;
+    }
+
+    .navbar .logo{
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+}
