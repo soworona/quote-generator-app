@@ -118,7 +118,7 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap:10px;
+    gap: 20px;
 }
 
 .card-header button{
@@ -139,6 +139,7 @@ body{
     padding: 8px 10px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 1rem;
     flex: 1;
     max-width: 350px;
 }
@@ -163,6 +164,7 @@ body{
     gap: 10px;
     padding: 5px 10px;
     width: 100%;
+    font-size: 1rem;
 }
 
 #quote{ 
