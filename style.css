@@ -139,7 +139,7 @@ body{
     padding: 8px 10px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.1rem;
     flex: 1;
     max-width: 350px;
 }
@@ -269,7 +269,6 @@ body{
 
     .card-header select{
         padding:5px 10px;
-        font-size: 1rem;
     }
 
     #randomBtn{
