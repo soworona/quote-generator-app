@@ -1,31 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    displayQuote(currentCategory, currentIndex);
-})
-
 //theme toggle
 let darkMode = localStorage.getItem("darkMode");
-const themeToggle = document.getElementById("toggle");
-
-if(darkMode === "active"){
-    enableDarkMode();
-}
-
-themeToggle.addEventListener("click", () => {
-    darkMode = localStorage.getItem("darkMode")
-    darkMode !== "active" ? enableDarkMode() : disableDarkMode();
-})
-
-function enableDarkMode(){
-    document.body.classList.add("dark-theme");
-    localStorage.setItem("darkMode", "active");
-}
-
-function disableDarkMode(){
-    document.body.classList.remove("dark-theme");
-    localStorage.setItem("darkMode", null);
-}
-
-//quotes
 const quotes ={
     science:[
         {
@@ -94,11 +68,9 @@ const quotes ={
         }
     ]
 }
-
 let currentCategory = 'friendship';
 let currentIndex = 0;
 let currentFontSize = 2;
-
 const categorySelect = document.getElementById("categorySelect");
 const randomBtn = document.getElementById("randomBtn");
 const previousBtn = document.getElementById("previousBtn");
@@ -107,7 +79,9 @@ const increaseFontSize = document.getElementById("increaseFontSize");
 const decreaseFontSize = document.getElementById("decreaseFontSize");
 const quoteText = document.getElementById("quote");
 const quoteAuthor = document.getElementById("author");
+const themeToggle = document.getElementById("toggle");
 
+themeToggle.addEventListener("click", toggleDarkMode);
 nextBtn.addEventListener("click", getNextQuote);
 previousBtn.addEventListener("click", getPreviousQuote);
 randomBtn.addEventListener("click", getRandomQuote);
@@ -115,9 +89,27 @@ categorySelect.addEventListener("change", selectCategory);
 increaseFontSize.addEventListener("click", increaseFont);
 decreaseFontSize.addEventListener("click", decreaseFont);
 
-displayQuote(currentCategory, currentIndex);
+if(darkMode === "active"){
+    enableDarkMode();
+}
+
+function toggleDarkMode() {
+    darkMode = localStorage.getItem("darkMode")
+    darkMode !== "active" ? enableDarkMode() : disableDarkMode();
+}
+
+function enableDarkMode(){
+    document.body.classList.add("dark-theme");
+    localStorage.setItem("darkMode", "active");
+}
+
+function disableDarkMode(){
+    document.body.classList.remove("dark-theme");
+    localStorage.setItem("darkMode", null);
+}
+
+//quotes
 function displayQuote(category, index){
-    debugger;
     const quote = quotes[category][index];
     quoteText.style.fontSize = `${currentFontSize}rem`;
     quoteText.textContent = quote.text;
@@ -152,16 +144,15 @@ function selectCategory(){
 }
 
 function increaseFont(){
-    debugger;
     currentFontSize += 0.2;
     displayQuote(currentCategory, currentIndex);
 }
 
 function decreaseFont(){
-    debugger;
     currentFontSize -= 0.2;
     displayQuote(currentCategory, currentIndex);
 }
 
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    displayQuote(currentCategory, currentIndex);
+})

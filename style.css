@@ -9,6 +9,7 @@ body{
     background-color: #FAFBF6;
 }
 
+/* Navbar styles */
 .navbar{
     display: flex;
     justify-content:center;
@@ -68,6 +69,8 @@ body{
     display: none;
 }
 
+/* Container styles */
+
 .container{
     display: flex;
     flex-direction: row;
@@ -93,6 +96,8 @@ body{
     transform: scale(1.2);
 }
 
+/* Quote card styles */
+
 .quote-card
 {
     display: flex;
@@ -109,11 +114,11 @@ body{
 
 .card-header{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap:2px;
+    gap:10px;
 }
 
 .card-header button{
@@ -131,11 +136,15 @@ body{
     background-color: #c8c8b1;
     border-radius: 5px;
     border: 1px solid black;
-    padding: 5px 1px;
+    padding: 8px 10px;
     cursor: pointer;
     font-weight: 600;
     flex: 1;
     max-width: 350px;
+}
+
+.font-controls{
+    margin: auto;
 }
 
 .card-body{
@@ -144,7 +153,16 @@ body{
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0 3rem;
+}
+
+#randomBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    width: 100%;
 }
 
 #quote{ 
@@ -159,7 +177,7 @@ body{
 }
 
 
-/* dark mode starts */
+/* Dark theme styles */
 .dark-theme{
     background-color: #2C2C2C;
     color: #E8F3E9;
@@ -207,7 +225,6 @@ body{
     border: 1px solid #E8F3E9;
 }
 
-/* dark mode ends */
 
 @media screen and (min-width: 768px) {
     .navbar{
@@ -226,7 +243,7 @@ body{
     }
 
     .container{
-        padding: 5rem 5rem;
+        padding: 5rem 1rem;
     }
 
     .arrow button{
@@ -240,6 +257,7 @@ body{
     }
 
     .card-header {
+        flex-wrap: wrap;
         gap:20px
     }
 
@@ -250,6 +268,10 @@ body{
     .card-header select{
         padding:5px 10px;
         font-size: 1rem;
+    }
+
+    #randomBtn{
+        max-width: 187px;
     }
     
 }
