@@ -35,10 +35,10 @@
 
     <div class="container">
         <div class="arrow">
-            <button >
+            <button id="previousBtn">
                 <img src="./public/arrow_back_ios_33dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="arrow-back">
             </button>
-            <button >
+            <button id="previousBtn">
                 <img src="./public/arrow_back_ios_33dp_E8F3E9_FILL0_wght400_GRAD0_opsz40.svg" alt="arrow-back">
             </button>
         </div>
@@ -46,34 +46,35 @@
         <div class="quote-card">
             <div class="card-header">
                 <select id="categorySelect">
-                    <option value="science">Science</option>
-                    <option value="philosophy">Philosophy</option>
+                    <option disabled >Select a category</option>
+                    <option value="science" selected>Science</option>
+                    <option value="friendship">Friendship</option>
+                    <option value="spirituality">Spirituality</option>
                   </select>
-                  <button>
+                  <button id="randomBtn">
                       <span class="material-symbols-outlined">shuffle</span>
                   </button>
                   <div class="font-controls">
-                      <button>
+                      <button id="adjustFontSize(0.1)">
                           <span class="material-symbols-outlined">add</span>
                       </button>
-                      <button>
+                      <button id="adjustFontSize(-0.1)">
                           <span class="material-symbols-outlined">remove</span>
                       </button>
                   </div>
             </div>
 
             <div class="card-body">
-                <!-- <p class="quote">Hee jejej</p> -->
-                <p class="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt praesentium amet perferendis excepturi eaque provident sequi asperiores dolorum! Minus officiis ex reprehenderit dolore ullam sequi sint explicabo modi, quae cumque?</p>
-                <p class="author">AA</p>
+                <p id="quote" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt praesentium amet perferendis excepturi eaque provident sequi asperiores dolorum! Minus officiis ex reprehenderit dolore ullam sequi sint explicabo modi, quae cumque?</p>
+                <p id="author">- John Doe</p>
             </div>
         </div>
 
         <div class="arrow">
-            <button>
+            <button id="nextBtn">
                 <img src="./public/arrow_forward_ios_33dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="arrow-forward">
             </button>
-            <button >
+            <button id="nextBtn" >
                 <img src="./public/arrow_forward_ios_33dp_E8F3E9_FILL0_wght400_GRAD0_opsz40.svg" alt="arrow-back">
             </button>
         </div>
