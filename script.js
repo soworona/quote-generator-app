@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', () => {
+    displayQuote(currentCategory, currentIndex);
+})
+
 //theme toggle
 let darkMode = localStorage.getItem("darkMode");
 const themeToggle = document.getElementById("toggle");
@@ -22,7 +26,6 @@ function disableDarkMode(){
 }
 
 //quotes
-
 const quotes ={
     science:[
         {
@@ -36,6 +39,14 @@ const quotes ={
         {
             text: "We are just an advanced breed of monkeys on a minor planet of a very average star. But we can understand the Universe. That makes us something very special.",
             author: "- Stephen Hawking"
+        },
+        {
+            text: "The good thing about science is that it's true whether or not you believe in it.",
+            author: "- Neil deGrasse Tyson"
+        },
+        {
+            text: "Equipped with his five senses, man explores the universe around him and calls the adventure Science.",
+            author: "- Edwin Hubble"
         }
     ],
     friendship:[
@@ -51,6 +62,14 @@ const quotes ={
             text: "It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept off to.",
             author: "- J.R.R. Tolkien"
         },
+        {
+            text: "A real friend is one who walks in when the rest of the world walks out.",
+            author: "- Walter Winchell"
+          },
+        {
+            text: "Friendship is the only cement that will ever hold the world together.",
+            author: "- Woodrow Wilson"
+        }
     ],
     spirituality:[
         {
@@ -64,13 +83,21 @@ const quotes ={
         {
             text: "Happiness is not something ready made. It comes from your own actions.",
             author: "- Dalai Lama"
+        },
+        {
+            text: "The privilege of a lifetime is to become who you truly are.",
+            author: "- Carl Jung"
+        },
+        {
+            text: "The soul always knows what to do to heal itself. The challenge is to silence the mind.",
+            author: "- Caroline Myss"
         }
     ]
 }
 
-let currentCategory = 'science';
+let currentCategory = 'friendship';
 let currentIndex = 0;
-let currentFontSize = 1.5;
+let currentFontSize = 2;
 
 const categorySelect = document.getElementById("categorySelect");
 const randomBtn = document.getElementById("randomBtn");
@@ -84,9 +111,13 @@ const quoteAuthor = document.getElementById("author");
 nextBtn.addEventListener("click", getNextQuote);
 previousBtn.addEventListener("click", getPreviousQuote);
 randomBtn.addEventListener("click", getRandomQuote);
+categorySelect.addEventListener("change", selectCategory);
+increaseFontSize.addEventListener("click", increaseFont);
+decreaseFontSize.addEventListener("click", decreaseFont);
 
 displayQuote(currentCategory, currentIndex);
 function displayQuote(category, index){
+    debugger;
     const quote = quotes[category][index];
     quoteText.style.fontSize = `${currentFontSize}rem`;
     quoteText.textContent = quote.text;
@@ -110,8 +141,27 @@ function getPreviousQuote(){
 }
 
 function getRandomQuote(){
-    debugger;
    const randomIndex = Math.floor(Math.random() * quotes[currentCategory].length);
    displayQuote(currentCategory, randomIndex);
 }
+
+function selectCategory(){
+    currentCategory = categorySelect.value;
+    currentIndex = 0;
+    displayQuote(currentCategory, currentIndex);
+}
+
+function increaseFont(){
+    debugger;
+    currentFontSize += 0.2;
+    displayQuote(currentCategory, currentIndex);
+}
+
+function decreaseFont(){
+    debugger;
+    currentFontSize -= 0.2;
+    displayQuote(currentCategory, currentIndex);
+}
+
+
 

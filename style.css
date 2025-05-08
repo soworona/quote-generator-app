@@ -93,13 +93,6 @@ body{
     transform: scale(1.2);
 }
 
-.arrow button:first-child{
-    display: block;
-}
-.arrow button:last-child{
-    display: none;
-}
-
 .quote-card
 {
     display: flex;
@@ -157,7 +150,7 @@ body{
 #quote{ 
     font-weight: 700;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 #author{
@@ -192,12 +185,12 @@ body{
     gap: 10px;
 }
 
-.dark-theme .arrow button:first-child{
-    display: none;
+.dark-theme #previousBtn img {
+    filter: invert(1) brightness(2);
 }
 
-.dark-theme .arrow button:last-child{
-    display: block;
+.dark-theme #nextBtn img  {
+    filter: invert(1) brightness(2);
 }
 
 .dark-theme .quote-card{
@@ -257,10 +250,6 @@ body{
     .card-header select{
         padding:5px 10px;
         font-size: 1rem;
-    }
-
-    .quote{
-        font-size: 1.5rem;
     }
     
 }
