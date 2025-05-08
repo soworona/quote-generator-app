@@ -71,20 +71,99 @@ body{
 .container{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
     padding: 5rem 1rem;
-    margin-top: 6rem;
-    background-color: salmon;
 }
 
-.container .arrow{
+.arrow{
+    margin: auto;
+}
+
+.arrow button{
     background-color: inherit;
     border: none;
     cursor: pointer;
-    
+    img{
+        height: 30px;
+    }
 }
+
+.arrow button:hover{
+    transform: scale(1.2);
+}
+
+.arrow button:first-child{
+    display: block;
+}
+.arrow button:last-child{
+    display: none;
+}
+
+.quote-card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    background-color: #E8F3E9;
+    flex: 2;
+    max-width: 800px;
+} 
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap:2px;
+}
+
+.card-header button{
+    background-color: #c8c8b1;
+    border-radius: 5px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.card-header button:hover{
+    opacity: 0.8;
+}
+
+.card-header select{
+    background-color: #c8c8b1;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px 1px;
+    cursor: pointer;
+    font-weight: 600;
+    flex: 1;
+    max-width: 350px;
+}
+
+.card-body{
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.quote{ 
+    font-weight: 700;
+    text-align: center;
+}
+
+.author{
+    font-weight: 400;
+    text-align: right;
+}
+
 
 /* dark mode starts */
 .dark-theme{
@@ -111,6 +190,29 @@ body{
     align-items: center;
     gap: 10px;
 }
+
+.dark-theme .arrow button:first-child{
+    display: none;
+}
+
+.dark-theme .arrow button:last-child{
+    display: block;
+}
+
+.dark-theme .quote-card{
+    background-color: #555568;
+}
+
+.dark-theme .card-header select{
+    background-color: #C6B7BE;
+    border: 1px solid #E8F3E9;
+}
+
+.dark-theme .card-header button{
+    background-color: #C6B7BE;
+    border: 1px solid #E8F3E9;
+}
+
 /* dark mode ends */
 
 @media screen and (min-width: 768px) {
@@ -128,12 +230,43 @@ body{
     .logo a {
         font-size: 2rem;
     }
+
+    .container{
+        padding: 5rem 5rem;
+    }
+
+    .arrow button{
+        img{
+            height: 50px;
+        }
+    }
+
+    .quote-card{
+        padding: 3rem;
+    }
+
+    .card-header {
+        gap:20px
+    }
+
+    .card-header button{
+        padding: 2px 5px;
+    }
+
+    .card-header select{
+        padding:5px 10px;
+        font-size: 1rem;
+    }
     
 }
 
 @media screen and (min-width: 1024px) {
     .toggle-text{
         display: block;
+    }
+
+    .container{
+        padding: 5rem 10rem;
     }
     
 }
