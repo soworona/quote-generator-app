@@ -2,6 +2,8 @@
 
 A responsive web application that displays various quotes with dark/light mode toggle, category selection, and font size controls.
 
+[Preview demo](https://food-4-thought.netlify.app)
+
 ## Features
 - **Theme Toggle**: Switch between light and darl theme
 - **Category Selection**: Select categories for quotes
