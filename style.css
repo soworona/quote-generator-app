@@ -5,15 +5,18 @@
     font-family: 'Space Grotesk', sans-serif;
 }
 
+body{
+    background-color: #FAFBF6;
+}
+
 .navbar{
     display: flex;
     justify-content:center;
     align-items: center;
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem ;
     width: 100%;
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #2C2C2C;
     color: black;
-    background-color: inherit;
 }
 
 .navbar .logo{
@@ -61,21 +64,42 @@
     display: none;
 }
 
+.toggle-text{
+    display: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    padding: 5rem 1rem;
+    margin-top: 6rem;
+    background-color: salmon;
+}
+
+.container .arrow{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    
+}
+
 /* dark mode starts */
 .dark-theme{
-    background-color: #050519;
-    color: #ffff;
+    background-color: #2C2C2C;
+    color: #E8F3E9;
 }
 
 .dark-theme .navbar {
- 
-    color: #ffff;
-    box-shadow: 0 4px 6px 0 rgba(255, 255, 255, 0.1);
+    color: #E8F3E9;
+    border-bottom: 1px solid #E8F3E9;
 }
 
 .dark-theme .toggle{
-    border: 1px solid #ffff;
-    color: #ffff;
+    border: 1px solid #E8F3E9;
+    color: #E8F3E9;
 }  
 
 .dark-theme .toggle div:first-child{
@@ -95,9 +119,21 @@
         padding-right: 2.5rem;;
     }
 
-    .navbar .logo{
+     .logo{
         position: absolute; 
         left: 50%; 
         transform: translateX(-50%);
     }
+
+    .logo a {
+        font-size: 2rem;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .toggle-text{
+        display: block;
+    }
+    
 }
